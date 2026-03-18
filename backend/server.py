@@ -23,7 +23,7 @@ app.add_middleware(
 )
 
 # MongoDB connection
-MONGO_URL = os.environ.get("MONGO_URL", "mongodb://localhost:27017")
+MONGO_URL = os.environ.get("MONGO_URL", "mongodb+srv://aastikmishra20_db_user:<db_password>@glowcare.pmslylk.mongodb.net/?appName=glowcare")
 DB_NAME = os.environ.get("DB_NAME", "glowcare")
 client = MongoClient(MONGO_URL)
 db = client[DB_NAME]
