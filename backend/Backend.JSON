@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "server.py"
+    }
+  ],
+  "env": {
+    "MONGO_URL": "@mongo_url",
+    "DB_NAME": "@db_name",
+    "ADMIN_PASSWORD": "@admin_password",
+    "JWT_SECRET": "@jwt_secret"
+  }
+}
