@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, UploadFile, File, Form, Depends
+from fastapi import FastAPI, HTTPException, UploadFile, File, Form, Depends, Header
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
@@ -85,7 +85,7 @@ async def admin_login(password: str = Form(...)):
 
 # Verify admin token
 @app.get("/api/admin/verify")
-async def verify_admin(authorization: str = None):
+async def verify_admin(authorization: str = Header(None)):
     if not authorization:
         raise HTTPException(status_code=401, detail="No token provided")
     

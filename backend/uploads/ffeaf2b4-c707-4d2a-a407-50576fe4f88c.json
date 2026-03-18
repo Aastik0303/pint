@@ -1,0 +1,159 @@
+{
+  "project_name": "GlowCare",
+  "design_philosophy": {
+    "theme": "light",
+    "mood": "Calming, Professional, Elegant, Clean, Trustworthy",
+    "core_concept": "Botanical Science - bridging natural beauty with healthcare precision."
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Playfair Display, serif",
+      "usage": "Use for all H1-H3 headings. Letter-spacing: tight. Weight: 600/700.",
+      "tailwind_class": "font-serif tracking-tight"
+    },
+    "body": {
+      "font_family": "Manrope, sans-serif",
+      "usage": "Use for paragraphs, UI text, labels. Weight: 400/500.",
+      "tailwind_class": "font-sans"
+    },
+    "mono": {
+      "font_family": "JetBrains Mono, monospace",
+      "usage": "Use for product IDs, prices, code snippets.",
+      "tailwind_class": "font-mono"
+    }
+  },
+  "colors": {
+    "primary": {
+      "DEFAULT": "#10B981",
+      "foreground": "#FFFFFF",
+      "50": "#ECFDF5",
+      "100": "#D1FAE5",
+      "500": "#10B981",
+      "600": "#059669",
+      "900": "#064E3B"
+    },
+    "secondary": {
+      "DEFAULT": "#FCD34D",
+      "foreground": "#1F2937",
+      "100": "#FEF3C7",
+      "500": "#FCD34D"
+    },
+    "background": {
+      "default": "#FFFFFF",
+      "subtle": "#F9FAFB",
+      "dark": "#111827"
+    },
+    "text": {
+      "primary": "#111827",
+      "secondary": "#4B5563",
+      "muted": "#9CA3AF",
+      "light": "#FFFFFF"
+    },
+    "status": {
+      "success": "#10B981",
+      "error": "#EF4444",
+      "warning": "#F59E0B",
+      "info": "#3B82F6"
+    }
+  },
+  "spacing_and_layout": {
+    "container_padding": "px-4 md:px-8 lg:px-12",
+    "section_spacing": "py-16 md:py-24",
+    "grid_gap": "gap-6 md:gap-8",
+    "border_radius": {
+      "default": "rounded-lg",
+      "card": "rounded-xl",
+      "button": "rounded-full"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-emerald-500 text-white hover:bg-emerald-600 shadow-md transition-all duration-300 hover:shadow-lg rounded-full px-8 py-3 font-medium",
+      "secondary": "bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 transition-all duration-300 rounded-full px-6 py-2 font-medium",
+      "outline": "border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50 transition-all duration-300 rounded-full px-6 py-2 font-medium"
+    },
+    "cards": {
+      "product": "group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1",
+      "admin_stat": "bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+    },
+    "inputs": {
+      "default": "w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all bg-gray-50/50 focus:bg-white"
+    }
+  },
+  "visual_enhancers": {
+    "shadows": "shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
+    "glassmorphism": "bg-white/80 backdrop-blur-md border border-white/20",
+    "gradients": "bg-gradient-to-br from-emerald-50 to-white",
+    "textures": "Use subtle grain overlay on hero sections for organic feel."
+  },
+  "image_urls": {
+    "hero_banner": {
+      "url": "https://images.unsplash.com/photo-1679584352584-f07655bbadea",
+      "alt": "Woman applying natural face cream",
+      "category": "hero"
+    },
+    "about_us": {
+      "url": "https://images.unsplash.com/photo-1649259088533-8a80c706fd3f",
+      "alt": "Green leaves representing natural ingredients",
+      "category": "about"
+    },
+    "product_placeholders": [
+      {
+        "url": "https://images.unsplash.com/photo-1704662451911-198af41df592",
+        "alt": "Minimalist skincare bottle",
+        "category": "skincare"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1649073005971-37babef31983",
+        "alt": "Healthcare products collection",
+        "category": "healthcare"
+      }
+    ]
+  },
+  "page_specific_guidelines": {
+    "public_home": {
+      "layout": "Hero Section with Split View -> Featured Products (Bento Grid) -> Brand Values -> Newsletter",
+      "hero_text": "Reveal Your Natural Glow. Scientifically formulated, naturally derived.",
+      "product_grid": "Use a masonry or bento grid. Make the first product span 2 columns/rows for emphasis."
+    },
+    "admin_dashboard": {
+      "layout": "Sidebar Navigation (Left) -> Header (Top) -> Main Content Area",
+      "style": "High density, clean lines. Avoid card backgrounds for table rows. Use distinct status badges.",
+      "colors": "Use white background for content area, light gray for page background."
+    },
+    "login": {
+      "layout": "Split screen: Left side image (leaves/nature), Right side form.",
+      "style": "Clean, centered form card. Glassmorphism effect on the form container."
+    }
+  },
+  "instructions_to_main_agent": {
+    "setup": [
+      "Install required fonts: Playfair Display and Manrope via Google Fonts.",
+      "Configure Tailwind colors to match the 'colors' object.",
+      "Ensure 'lucide-react' is installed for icons."
+    ],
+    "implementation": [
+      "Use 'sonner' for toast notifications.",
+      "For the Public Product Grid, ensure images have 'object-cover' and aspect ratios are consistent (e.g., aspect-[3/4] or aspect-square).",
+      "For Admin Panel, implement a protected route wrapper that checks for authentication.",
+      "Use 'framer-motion' for subtle page transitions (opacity fade-in)."
+    ],
+    "accessibility": [
+      "Ensure all text meets WCAG AA contrast ratios.",
+      "Add aria-labels to all icon-only buttons.",
+      "Focus states must be visible (ring-2 ring-emerald-400)."
+    ]
+  },
+  "universal_guidelines": {
+    "do_not": [
+      "DO NOT use generic gradients (e.g., standard blue-to-purple).",
+      "DO NOT use 'Inter' font for headings.",
+      "DO NOT center-align long paragraphs of text."
+    ],
+    "do": [
+      "DO use ample whitespace (p-8, p-12).",
+      "DO use micro-interactions on hover (buttons lift, shadows deepen).",
+      "DO ensure mobile responsiveness for all grids (grid-cols-1 on mobile)."
+    ]
+  }
+}
